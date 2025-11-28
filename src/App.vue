@@ -1,43 +1,26 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import avatar from './assets/landing-memojis.webp'
+import { initFluid } from 'smokey-fluid-cursor'
 
 onMounted(() => {
-  const canvas = document.getElementById('fluid-bg') as HTMLCanvasElement
-  const ctx = canvas.getContext('2d')
-  if (!ctx) return
-
-  let w = canvas.width = window.innerWidth
-  let h = canvas.height = window.innerHeight
-
-  const pointer = { x: w / 2, y: h / 2 }
-
-  const resize = () => {
-    w = canvas.width = window.innerWidth
-    h = canvas.height = window.innerHeight
-  }
-  window.addEventListener('resize', resize)
-
-  window.addEventListener('mousemove', (e) => {
-    pointer.x = e.clientX
-    pointer.y = e.clientY
+  initFluid({
+    id: 'fluid-bg',
+    simResolution: 128,
+    dyeResolution: 1440,
+    captureResolution: 512,
+    densityDissipation: 1.0,
+    velocityDissipation: 1.5,
+    pressure: 0.1,
+    curl: 3,
+    splatRadius: 0.25,
+    splatForce: 7000,
+    shading: true,
+    colorUpdateSpeed: 10,
+    paused: false,
+    backColor: { r: 0.5, g: 0, b: 0 },
+    transparent: true
   })
-
-  const draw = () => {
-    ctx.clearRect(0, 0, w, h)
-
-    const gradient = ctx.createRadialGradient(pointer.x, pointer.y, 10, pointer.x, pointer.y, 400)
-    gradient.addColorStop(0, 'rgba(255, 200, 200, 0.8)')
-    gradient.addColorStop(0.5, 'rgba(200, 255, 255, 0.5)')
-    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)')
-
-    ctx.fillStyle = gradient
-    ctx.fillRect(0, 0, w, h)
-
-    requestAnimationFrame(draw)
-  }
-
-  draw()
 })
 </script>
 
@@ -135,11 +118,13 @@ onMounted(() => {
 }
 
 #fluid-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .content {
@@ -217,7 +202,7 @@ onMounted(() => {
 /* Responsive mobile */
 @media (max-width: 650px) {
   .nav {
-    grid-template-columns: 1fr; /* un bouton par ligne */
+    grid-template-columns: 1fr;
     gap: 12px;
   }
   .nav-btn {
@@ -225,13 +210,13 @@ onMounted(() => {
     padding: 1rem;
   }
   .avatar {
-    max-width: 100%;  /* un peu plus grand sur mobile */
+    max-width: 100%;
   }
   .hero {
-    font-size: 2.2rem; /* texte réduit */
+    font-size: 2.2rem;
   }
   .title {
-    font-size: 1rem;   /* texte réduit */
+    font-size: 1rem;
   }
 }
 </style>
