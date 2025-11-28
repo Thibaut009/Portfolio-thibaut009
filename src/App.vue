@@ -29,7 +29,7 @@ onMounted(() => {
     <canvas id="fluid-bg"></canvas>
     <div class="content">
       <div class="title">Hey, I'm Thibaut 👋</div>
-      <h1 class="hero">My Portfolio</h1>
+      <h1 class="hero">Dev Full Stack</h1>
       <img class="avatar" :src="avatar" alt="avatar" />
 
       <div class="nav">
