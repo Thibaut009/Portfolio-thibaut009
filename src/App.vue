@@ -28,13 +28,13 @@ onMounted(() => {
   <div class="wrapper">
     <canvas id="fluid-bg"></canvas>
     <div class="content">
-      <div class="title">Hey, I'm Thibaut 👋</div>
-      <h1 class="hero">Dev Full Stack</h1>
+      <div class="title fade-slide-down">Hey, I'm Thibaut Gabet👋</div>
+      <h1 class="hero fade-slide-down">Dev Full Stack</h1>
       <img class="avatar" :src="avatar" alt="avatar" />
 
       <div class="nav">
         <!-- Me -->
-        <button class="nav-btn">
+        <button class="nav-btn fade-slide-up">
           <div class="btn-content">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#329696" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
@@ -47,7 +47,7 @@ onMounted(() => {
         </button>
 
         <!-- Projects -->
-        <button class="nav-btn">
+        <button class="nav-btn fade-slide-up">
           <div class="btn-content">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3E9858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
@@ -60,7 +60,7 @@ onMounted(() => {
         </button>
 
         <!-- Skills -->
-        <button class="nav-btn">
+        <button class="nav-btn fade-slide-up">
           <div class="btn-content">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#856ED9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path>
@@ -72,7 +72,7 @@ onMounted(() => {
         </button>
 
         <!-- Fun -->
-        <button class="nav-btn">
+        <button class="nav-btn fade-slide-up">
           <div class="btn-content">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#B95F9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5.8 11.3 2 22l10.7-3.79"></path>
@@ -90,7 +90,7 @@ onMounted(() => {
         </button>
 
         <!-- Contact -->
-        <button class="nav-btn">
+        <button class="nav-btn fade-slide-up">
           <div class="btn-content">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C19433" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="10" cy="8" r="5"></circle>
@@ -198,6 +198,41 @@ onMounted(() => {
   height: 26px;
   margin-bottom: 6px;
 }
+
+/* Animation pour le texte venant du haut */
+.fade-slide-down {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideDown 0.9s forwards;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation pour les cartes venant du bas */
+.fade-slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.9s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered delay pour chaque carte */
+.nav-btn:nth-child(1) { animation-delay: 0.2s; }
+.nav-btn:nth-child(2) { animation-delay: 0.2s; }
+.nav-btn:nth-child(3) { animation-delay: 0.2s; }
+.nav-btn:nth-child(4) { animation-delay: 0.2s; }
+.nav-btn:nth-child(5) { animation-delay: 0.2s; }
 
 /* Responsive mobile */
 @media (max-width: 650px) {
