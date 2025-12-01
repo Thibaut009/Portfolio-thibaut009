@@ -7,6 +7,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+   --me-color: #329696;
+   --project-color: #3E9858;
+   --skill-color: #856ED9;
+   --fun-color: #B95F9D;
+   --contact-color: #C19433;
 }
 
 body {

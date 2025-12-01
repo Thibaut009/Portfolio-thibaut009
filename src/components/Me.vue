@@ -8,7 +8,7 @@ const timelineItems = ref([
     title: 'MBA Full Stack Developer',
     subtitle: 'Master 2',
     description: 'Formation approfondie en développement web full stack',
-    color: '#329696',
+    color: 'var(--me-color)',
     type: 'education'
   },
   {
@@ -16,7 +16,7 @@ const timelineItems = ref([
     title: 'MBA Full Stack Developer',
     subtitle: 'Master 1',
     description: 'Apprentissage des technologies web modernes',
-    color: '#856ED9',
+    color: 'var(--project-color)',
     type: 'education'
   },
   {
@@ -24,7 +24,7 @@ const timelineItems = ref([
     title: 'Bachelor Developer Web',
     subtitle: 'Bachelor 3',
     description: 'Bachelor en développement web et mobile (certifications professionnelles de développeur d\'applications).\n',
-    color: '#B95F9D',
+    color: 'var(--skill-color)',
     type: 'education'
   },
   {
@@ -32,7 +32,7 @@ const timelineItems = ref([
     title: 'BTS SIO (option SLAM)',
     subtitle: 'Bac +2',
     description: 'BTS SIO (Services informatiques aux organisations) option SLAM (Solutions logicielles et applications métier).',
-    color: '#C19433',
+    color: 'var(--fun-color)',
     type: 'education'
   },
   {
@@ -40,7 +40,7 @@ const timelineItems = ref([
     title: 'Full Stack Developer chez Kapela',
     subtitle: 'Alternance',
     description: 'Développement d\'applications web complètes en entreprise',
-    color: '#329696',
+    color: 'var(--me-color)',
     type: 'experience'
   },
   {
@@ -48,7 +48,7 @@ const timelineItems = ref([
     title: 'Developer Web chez Kapela',
     subtitle: 'Stage',
     description: '5 semaines chez Kapela Constellation en tant que développeur web',
-    color: '#856ED9',
+    color: 'var(--project-color)',
     type: 'experience'
   },
   {
@@ -56,7 +56,7 @@ const timelineItems = ref([
     title: 'Developer Web chez Easyteam',
     subtitle: 'Stage',
     description: '6 semaines chez Easyteam Constellation en tant que développeur web.',
-    color: '#B95F9D',
+    color: 'var(--skill-color)',
     type: 'experience'
   }
 ])
@@ -152,12 +152,11 @@ const experienceItems = timelineItems.value.filter(item => item.type === 'experi
 <style scoped>
 .wrapper {
   position: relative;
-  min-height: 100vh;
   overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0;
+  padding: 60px 0 0;
 }
 
 .content {
@@ -177,7 +176,7 @@ const experienceItems = timelineItems.value.filter(item => item.type === 'experi
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 40px;
-  background: #329696;
+  background: var(--me-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -258,7 +257,7 @@ const experienceItems = timelineItems.value.filter(item => item.type === 'experi
 }
 
 .section-title svg {
-  color: #329696;
+  color: var(--me-color);
   flex-shrink: 0;
 }
 
@@ -274,7 +273,7 @@ const experienceItems = timelineItems.value.filter(item => item.type === 'experi
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #329696 0%, #856ED9 50%, #B95F9D 100%);
+  background: linear-gradient(180deg, var(--me-color) 0%, var(--project-color) 25%, var(--skill-color) 50%, var(--fun-color) 75%, var(--contact-color) 100%);
 }
 
 .timeline-item {

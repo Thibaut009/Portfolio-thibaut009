@@ -42,7 +42,7 @@ onMounted(() => {
         <!-- Me -->
         <button class="nav-btn fade-slide-up" @click="goTo('/me')">
           <div class="btn-content">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#329696" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" :stroke="`var(--me-color)`" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <path d="M18 13a6 6 0 0 1-6 5 6 6 0 0 1-6-5h12Z"></path>
               <line x1="9" x2="9.01" y1="9" y2="9"></line>
@@ -55,7 +55,7 @@ onMounted(() => {
         <!-- Projects.vue -->
         <button class="nav-btn fade-slide-up" @click="goTo('/projects')">
           <div class="btn-content">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3E9858" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" :stroke="`var(--project-color)`" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
               <path d="M22 13a18.15 18.15 0 0 1-20 0"></path>
@@ -68,7 +68,7 @@ onMounted(() => {
         <!-- Skills -->
         <button class="nav-btn fade-slide-up" @click="goTo('/skills')">
           <div class="btn-content">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#856ED9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" :stroke="`var(--skill-color)`" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path>
               <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path>
               <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path>
@@ -80,7 +80,7 @@ onMounted(() => {
         <!-- Fun -->
         <button class="nav-btn fade-slide-up" @click="goTo('/fun')">
           <div class="btn-content">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#B95F9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" :stroke="`var(--fun-color)`" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5.8 11.3 2 22l10.7-3.79"></path>
               <path d="M4 3h.01"></path>
               <path d="M22 8h.01"></path>
@@ -98,7 +98,7 @@ onMounted(() => {
         <!-- Contact -->
         <button class="nav-btn fade-slide-up" @click="goTo('/contact')">
           <div class="btn-content">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C19433" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" :stroke="`var(--contact-color)`" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="10" cy="8" r="5"></circle>
               <path d="M2 21a8 8 0 0 1 10.434-7.62"></path>
               <circle cx="18" cy="18" r="3"></circle>
