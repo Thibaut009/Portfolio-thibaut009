@@ -131,7 +131,6 @@ const hobbies = ref([
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  margin-bottom: 80px;
 }
 
 .hobby-card {
@@ -222,7 +221,6 @@ const hobbies = ref([
 
 .quote-card {
   background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 100%);
-  backdrop-filter: blur(12px);
   border-radius: 24px;
   border: 1px solid rgba(0,0,0,0.1);
   padding: 48px;

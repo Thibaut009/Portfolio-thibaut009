@@ -3,64 +3,52 @@ import { ref } from 'vue'
 
 const projects = ref([
   {
-    id: 1,
     title: 'E-Commerce Platform',
     category: 'Full Stack',
     description: 'Plateforme e-commerce complète avec gestion des produits, panier, paiement et interface d\'administration.',
     technologies: ['Vue.js', 'Node.js', 'MongoDB', 'Stripe'],
     color: 'var(--project-color)',
-    year: '2024',
-    status: 'Terminé'
+    year: '2024'
   },
   {
-    id: 2,
     title: 'Task Management App',
     category: 'Frontend',
     description: 'Application de gestion de tâches collaborative avec système de notifications en temps réel.',
     technologies: ['React', 'TypeScript', 'Firebase', 'Tailwind'],
     color: 'var(--me-color)',
-    year: '2024',
-    status: 'En cours'
+    year: '2024'
   },
   {
-    id: 3,
     title: 'Portfolio Dashboard',
     category: 'Full Stack',
     description: 'Dashboard interactif pour suivre et analyser les performances d\'un portfolio d\'investissement.',
     technologies: ['Vue.js', 'Express', 'PostgreSQL', 'Chart.js'],
     color: 'var(--skill-color)',
-    year: '2023',
-    status: 'Terminé'
+    year: '2023'
   },
   {
-    id: 4,
     title: 'Social Media API',
     category: 'Backend',
     description: 'API RESTful complète pour une application de réseau social avec authentification JWT.',
     technologies: ['Node.js', 'Express', 'MongoDB', 'Redis'],
     color: 'var(--fun-color)',
-    year: '2023',
-    status: 'Terminé'
+    year: '2023'
   },
   {
-    id: 5,
     title: 'Mobile Weather App',
     category: 'Mobile',
     description: 'Application mobile de météo avec prévisions détaillées et notifications personnalisées.',
     technologies: ['React Native', 'TypeScript', 'OpenWeather API'],
     color: 'var(--contact-color)',
-    year: '2023',
-    status: 'Terminé'
+    year: '2023'
   },
   {
-    id: 6,
     title: 'Blog CMS',
     category: 'Full Stack',
     description: 'Système de gestion de contenu pour blogs avec éditeur markdown et gestion des médias.',
     technologies: ['Next.js', 'Prisma', 'MySQL', 'AWS S3'],
     color: 'var(--project-color)',
-    year: '2022',
-    status: 'Terminé'
+    year: '2022'
   }
 ])
 </script>
@@ -69,25 +57,26 @@ const projects = ref([
   <div class="wrapper">
     <div class="content">
       <div class="header fade-slide-down">
-        <h1 class="title">My Projects</h1>
+        <h1 class="title">MY PROJECTS</h1>
       </div>
 
-      <div class="projects-grid">
+      <div class="projects-grid fade-slide-up">
         <div
             v-for="(project, index) in projects"
-            :key="project.id"
-            class="project-card fade-slide-up"
+            :key="project.title"
+            class="project-card"
             :style="{ animationDelay: `${0.2 + index * 0.1}s` }"
         >
-          <div class="card-header" :style="{ borderTopColor: project.color }">
+          <div class="card-header">
             <div class="header-top">
-              <span class="category" :style="{ color: project.color }">{{ project.category }}</span>
+              <span class="category" :style="{ color: project.color }">
+                {{ project.category }}
+              </span>
+
               <span class="year">{{ project.year }}</span>
             </div>
+
             <h2 class="project-title">{{ project.title }}</h2>
-            <span class="status" :class="project.status === 'En cours' ? 'in-progress' : 'completed'">
-              {{ project.status }}
-            </span>
           </div>
 
           <div class="card-body">
@@ -98,7 +87,7 @@ const projects = ref([
                   v-for="tech in project.technologies"
                   :key="tech"
                   class="tech-tag"
-                  :style="{ borderColor: project.color, color: project.color }"
+                  :style="{ color: project.color, borderColor: project.color }"
               >
                 {{ tech }}
               </span>
@@ -117,70 +106,80 @@ const projects = ref([
           </div>
         </div>
       </div>
+
+      <div class="quote-section fade-slide-up" style="animation-delay: 1.3s">
+        <div class="quote-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor" class="quote-icon">
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"></path>
+          </svg>
+          <p class="quote-text">
+            "Chaque projet est une nouvelle aventure qui enrichit mes compétences et nourrit ma créativité."
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* Wrapper */
 .wrapper {
   position: relative;
   overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0 0;
+  padding: 60px 0;
+  min-height: 100vh;
 }
 
 .content {
-  position: relative;
   z-index: 2;
   width: 90%;
   max-width: 1200px;
   padding: 0 20px;
 }
 
+/* Title */
 .header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .title {
   font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 16px;
   background: var(--project-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
+/* GRID */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  margin-bottom: 40px;
 }
 
+/* CARD */
 .project-card {
-  background: rgba(255,255,255,0.3);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 24px;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  animation: slideUp 0.9s forwards;
 }
 
+/* Card header */
 .card-header {
-  padding: 24px 24px 20px 24px;
-  border-top: 4px solid;
+  padding: 26px;
 }
 
 .header-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 12px;
 }
 
@@ -188,52 +187,34 @@ const projects = ref([
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .year {
-  font-size: 0.9rem;
   color: #999;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
 .project-title {
   font-size: 1.6rem;
   font-weight: 700;
-  margin: 0 0 12px 0;
+  margin-bottom: 12px;
   color: #333;
 }
 
-.status {
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.status.completed {
-  background: rgba(34, 197, 94, 0.2);
-  color: #16a34a;
-}
-
-.status.in-progress {
-  background: rgba(251, 191, 36, 0.2);
-  color: #d97706;
-}
-
+/* Body */
 .card-body {
-  padding: 0 24px 20px 24px;
+  padding: 0 26px 26px;
   flex-grow: 1;
 }
 
 .description {
-  font-size: 0.95rem;
   color: #555;
   line-height: 1.6;
-  margin: 0 0 20px 0;
+  margin-bottom: 20px;
 }
 
+/* Tags */
 .technologies {
   display: flex;
   flex-wrap: wrap;
@@ -242,27 +223,26 @@ const projects = ref([
 
 .tech-tag {
   padding: 6px 14px;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 0.85rem;
-  font-weight: 600;
   border: 2px solid;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
 
+/* Footer button */
 .card-footer {
-  padding: 0 24px 24px 24px;
+  padding: 0 26px 26px;
 }
 
 .view-btn {
   width: 100%;
   padding: 14px;
+  border-radius: 14px;
   border: none;
-  border-radius: 12px;
   color: white;
-  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,13 +250,49 @@ const projects = ref([
 }
 
 .view-btn:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
+.quote-section {
+  margin-top: 60px;
+}
+
+.quote-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 100%);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 48px;
+  text-align: center;
+  position: relative;
+}
+
+.quote-icon {
+  color: var(--project-color);
+  opacity: 0.3;
+  margin-bottom: 20px;
+}
+
+.quote-text {
+  font-size: 1.3rem;
+  color: #333;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Animations */
 .fade-slide-down {
   opacity: 0;
   transform: translateY(-30px);
   animation: slideDown 0.9s forwards;
+}
+
+.fade-slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.9s forwards;
 }
 
 @keyframes slideDown {
@@ -286,12 +302,6 @@ const projects = ref([
   }
 }
 
-.fade-slide-up {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideUp 0.9s forwards;
-}
-
 @keyframes slideUp {
   to {
     opacity: 1;
@@ -299,13 +309,7 @@ const projects = ref([
   }
 }
 
-@media (max-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-  }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
   .title {
     font-size: 2.5rem;
@@ -313,11 +317,6 @@ const projects = ref([
 
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .project-title {
-    font-size: 1.4rem;
   }
 }
 

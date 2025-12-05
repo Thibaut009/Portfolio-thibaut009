@@ -145,6 +145,17 @@ const experienceItems = timelineItems.value.filter(item => item.type === 'experi
           </div>
         </div>
       </div>
+
+      <div class="quote-section fade-slide-up" style="animation-delay: 1.3s">
+        <div class="quote-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor" class="quote-icon">
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"></path>
+          </svg>
+          <p class="quote-text">
+            "Le parcours personnel et professionnel forge non seulement des compétences, mais aussi la vision et la créativité."
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -156,14 +167,14 @@ const experienceItems = timelineItems.value.filter(item => item.type === 'experi
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0 0;
+  padding: 60px 0;
 }
 
 .content {
   position: relative;
   z-index: 2;
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   padding: 0 20px;
 }
 
@@ -336,6 +347,35 @@ const experienceItems = timelineItems.value.filter(item => item.type === 'experi
   color: #555;
   margin: 0;
   line-height: 1.5;
+}
+
+.quote-section {
+  margin-top: 60px;
+}
+
+.quote-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 100%);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 48px;
+  text-align: center;
+  position: relative;
+}
+
+.quote-icon {
+  color: var(--me-color);
+  opacity: 0.3;
+  margin-bottom: 20px;
+}
+
+.quote-text {
+  font-size: 1.3rem;
+  color: #333;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.7;
+  margin: 0;
 }
 
 .fade-slide-down {
