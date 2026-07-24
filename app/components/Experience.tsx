@@ -15,14 +15,16 @@ export default function Experience() {
   return (
     <section id="experience">
       <div className="wrap">
-        <div className="section-tag">{experience.tag}</div>
-        <h2 className="section-title">
-          {experience.titlePrefix} <span className="grad">{experience.titleHighlight}</span>
-        </h2>
-        <p className="section-sub">{experience.description}</p>
+        <div className="reveal">
+          <div className="section-tag">{experience.tag}</div>
+          <h2 className="section-title">
+            {experience.titlePrefix} <span className="grad">{experience.titleHighlight}</span>
+          </h2>
+          <p className="section-sub">{experience.description}</p>
+        </div>
 
         <div className="exp-grid">
-          <div>
+          <div className="reveal">
             <div className="timeline">
               {experience.timeline.map((item) => (
                 <div className="tl-item" key={item.date + item.title}>
@@ -35,7 +37,7 @@ export default function Experience() {
             </div>
           </div>
 
-          <div>
+          <div className="reveal">
             <h4 style={sectionLabelStyle}>{experience.educationLabel}</h4>
             <div className="timeline" style={{ marginBottom: 34 }}>
               {experience.education.map((item) => (

@@ -13,14 +13,16 @@ export default function Skills() {
   return (
     <section id="skills">
       <div className="wrap">
-        <div className="section-tag">{skills.tag}</div>
-        <h2 className="section-title">
-          {skills.titlePrefix} <span className="grad">{skills.titleHighlight}</span>
-        </h2>
-        <p className="section-sub">{skills.description}</p>
+        <div className="reveal">
+          <div className="section-tag">{skills.tag}</div>
+          <h2 className="section-title">
+            {skills.titlePrefix} <span className="grad">{skills.titleHighlight}</span>
+          </h2>
+          <p className="section-sub">{skills.description}</p>
+        </div>
 
         <div className="skills-grid">
-          <div className="skill-block">
+          <div className="skill-block reveal">
             <h4>{skills.technicalLabel}</h4>
 
             {skills.categories.map((category) => (
@@ -37,7 +39,7 @@ export default function Skills() {
             ))}
           </div>
 
-          <div>
+          <div className="reveal">
             <h4 style={{ ...sectionLabelStyle, marginBottom: 20 }}>{skills.otherLabel}</h4>
             <div className="tools-row" style={{ marginBottom: 30 }}>
               {skills.softSkills.map((soft) => (

@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import StarField from "./components/StarField";
+import ScrollReveal from "./components/ScrollReveal";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import ProjectsSection from "./components/ProjectsSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="bg-fx" />
       <div className="grid-fx" />
       <StarField />
+      <ScrollReveal />
 
       <Header />
       <Hero />

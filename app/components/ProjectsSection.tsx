@@ -17,11 +17,13 @@ export default function ProjectsSection() {
   return (
     <section id="projects">
       <div className="wrap">
-        <div className="section-tag">{projects.tag}</div>
-        <h2 className="section-title">
-          {projects.titlePrefix} <span className="grad">{projects.titleHighlight}</span>
-        </h2>
-        <p className="section-sub">{projects.description}</p>
+        <div className="reveal">
+          <div className="section-tag">{projects.tag}</div>
+          <h2 className="section-title">
+            {projects.titlePrefix} <span className="grad">{projects.titleHighlight}</span>
+          </h2>
+          <p className="section-sub">{projects.description}</p>
+        </div>
 
         <div className="filter-row">
           {projects.filters.map((filter) => (
@@ -37,7 +39,7 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        <div className="proj-grid">
+        <div className="proj-grid reveal">
           {filteredItems.map((project, index) => (
             <div className="proj-card" key={`${project.title}-${index}`}>
               <ProjectThumb project={project} />

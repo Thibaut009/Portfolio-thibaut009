@@ -9,7 +9,7 @@ export default function About() {
     <section id="about">
       <div className="wrap">
         <div className="about-grid">
-          <div className="about-portrait">
+          <div className="about-portrait reveal">
             <Image
               className="char-img"
               src="/avatar-character.png"
@@ -29,7 +29,7 @@ export default function About() {
             <AngularShield size={78} iconSize={42} />
           </div>
 
-          <div>
+          <div className="reveal">
             <div className="section-tag">{about.tag}</div>
             <h2 className="section-title">
               {about.titleLine1}

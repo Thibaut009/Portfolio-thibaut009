@@ -42,14 +42,16 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className="wrap">
-        <div className="section-tag">{contact.tag}</div>
-        <h2 className="section-title">
-          {contact.titlePrefix} <span className="grad">{contact.titleHighlight}</span>
-        </h2>
-        <p className="section-sub">{contact.description}</p>
+        <div className="reveal">
+          <div className="section-tag">{contact.tag}</div>
+          <h2 className="section-title">
+            {contact.titlePrefix} <span className="grad">{contact.titleHighlight}</span>
+          </h2>
+          <p className="section-sub">{contact.description}</p>
+        </div>
 
         <div className="contact-grid">
-          <div>
+          <div className="reveal">
             {contact.items.map((item) => (
               <div className="contact-item" key={item.label}>
                 <div className="contact-ic">{item.icon}</div>
@@ -74,7 +76,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <form className="form-card" onSubmit={handleSubmit}>
+          <form className="form-card reveal" onSubmit={handleSubmit}>
             <div className="form-row">
               <div>
                 <label>{form.nameLabel}</label>

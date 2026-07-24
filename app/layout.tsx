@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import content from "./data/content.json";
+import CustomCursor from "./components/CustomCursor";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -112,6 +113,7 @@ export default function RootLayout({
       className={`${poppins.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body>
+        <CustomCursor />
         {children}
         <script
           type="application/ld+json"
